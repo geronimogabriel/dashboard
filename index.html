@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    
+</head>
+<body>
+    <div class="navbar__container minimize">
+        <nav>
+                <div class="nav-logo">
+                    <img src="img/alogo.png" alt="">
+                    <span>Empresa</span>
+                    <i class='bx bx-radio-circle marked'></i>
+                </div>
+            <section class="menu__section relatorio">
+                <div class="nav-dropdown">
+                    <div class="items-container">
+                        <i class='nav-dropdown_icon bx bx-home-alt'></i>
+                        <span>Relatórios</span>
+                        <div class="relatorio-notification"><span>1</span></div>
+                    </div>
+                    <i class='bx bx-chevron-right rel-item arrow'></i>        
+                </div>
+            </section>
+
+            <section class="menu__section comercial">
+                <span class="section__title">COMERCIAL</span>
+                <ul>
+                    <li class="dropdown-list">
+                        <div class="nav-dropdown">
+                            <div class="items-container">
+                                <i class='nav-dropdown_icon bx bx-bar-chart-alt-2'></i>
+                                <p>Comercial</p>
+                            </div>
+                            <i class='bx bx-chevron-right rel-item arrow'></i>
+                        </div>
+                        <ul class="dropdown-content test">
+                            <a href="#">
+                                <li class="dropdown-item"><i class='bx bx-radio-circle'></i><span>Item</span></li>
+                            </a>
+                            <a href="#">
+                                <span>
+                                    <li class="dropdown-item"><i class='bx bx-radio-circle'></i> <span>Item</span></li>
+                                </span>
+                            </a>
+                            <a href="#">
+                                <li class="dropdown-item"><i class='bx bx-radio-circle'></i> <span>Item</span></li>
+                            </a>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown-list">
+                        <div class="nav-dropdown">
+                            <div class="items-container">
+                                <i class='nav-dropdown_icon bx bx-desktop'></i>
+                                <p>CPD</p>
+                            </div>
+                            <i class='bx bx-chevron-right rel-item arrow'></i>
+                        </div>
+                        <ol class="dropdown-content test">
+                            <a href="#">
+                                <li class="dropdown-item"><i class='bx bx-radio-circle'></i> <span>Item</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="dropdown-item"><i class='bx bx-radio-circle'></i> <span>Item</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="dropdown-item"><i class='bx bx-radio-circle'></i> <span>Item</span></li>
+                            </a>
+                            <a href="#">
+                                <li class="dropdown-item"><i class='bx bx-radio-circle'></i> <span>Item</span></li>
+                            </a>
+                        </ol>
+                    </li>
+
+                </ul>
+                
+            </section>
+        </nav>
+    </div>
+
+    <div class="main container-min">
+        <header class="header sw">
+            <div class="top-bar__container">
+                <div class="info-right"> 
+                    <div class="info-rigth_name">          
+                        <img src="img/profile.png" alt="" class="info-right_img">
+                    
+                        <div class="profile_name">
+                            <span id="name">Gabriel Geronimo</span>
+                            <span id="sector">admin</span>
+                        </div>  
+                    </div>
+                    <div class="info-right_profile_drop hide">
+                        <div class="profile-drop_content">
+                        <div class="profile-item"><i class='bx bx-cog'></i><span>Configurações</span></div>
+                        <div class="profile-item"><i class='bx bx-log-out'></i><span>Logout</span></div>
+                        </div>
+                    </div>
+                    <div class="bell_container">
+                        <div class="bell-not">1</div>
+                        <i class='bx bx-bell bell icon'></i>
+                        
+                    </div>
+                    <div class="bell-drop hide">
+                        <h2>Notificação</h2>
+                        <div class="bell-notification">
+                            <span>1 new</span>
+                        </div>
+                        <div class="bell-drop_item">
+                            <img src="https://cdn.pixabay.com/photo/2012/04/26/19/43/profile-42914_960_720.png" alt="">
+                            <div class="bell-drop-message">
+                                <span class="bell-message_title">Parabéns Gabriel</span>🎉<br>
+                                <span class="bell-message_text">Bateu a meta de vendas!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <i class='bx bx-search lupa icon'></i>
+                    <i class='bx bx-moon theme icon' id="theme"></i>
+                    <div class="tempo">
+                        <div class="column">
+                            <i class='bx bx-cloud-rain'></i>
+                            <span class="weather"></span>
+                        </div>
+                        <div class="column">
+                            <span class="city">Limeira</span>
+                            <span class="temp">25&#176C</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="search">
+                    <input id="searchbar" onkeyup="search_animal()" type="text"
+                        name="search" placeholder="Search...">
+                        <span id="close">X</span>
+                        <ol id='list'>
+                            
+                        </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-main">
+            <div class="content__display">
+                <div class="grid-left">
+                    <div class="grid-left_top sw">
+                        <div class="left-top_content">
+                            <div class="left-top_text">
+                                <div>
+                                    <h3>Parabéns Pedro!🎉</h3>
+                                    <p>O setor que mais vendeu!</p>
+                                </div>
+                                <span>R$150K</span>
+                                <input type="button" value="Ver Vendas">
+                            </div>
+                            <img src="img/badge.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="grid-left_middle">
+                        <div class="left-middle_left sw">
+                            <h3>Lucro</h3>
+                            <canvas id="myChart2" height="250"></canvas>
+                        </div>
+                        <div class="left-middle_right sw">
+                            <h3>testing...</h3>
+                            <canvas id="myChart4" height="240"></canvas>
+                        </div>
+                    </div>
+                    <div class="grid-left_bottom sw">
+                        <div class="left-bottom_left">
+                            <h3>Ganhos</h3>
+                            <h5>Neste mês:</h5>
+                            <span><strong>R$100.535</strong></span>
+                            <p><strong>47%</strong> a mais que no ultimo mês.</p>
+                        </div>
+                        <div class="left-bottom_right">
+                            <canvas id="myChart5"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-right">
+                    <div class="grid-right_top sw">
+                            <div class="market_container">
+                                <div class="market-status market-sale"><i class='bx bx-stats'></i></div>
+                                <div class="market-info">
+                                    <h3>230K</h3>
+                                    <span>vendas</span>
+                                </div>
+                            </div>
+                            <div class="market_container ">
+                                <div class="market-status market-client"><i class='bx bxs-user'></i></div>
+                                <div class="market-info">
+                                    <h3>Testing...</h3>
+                                    <span>testing...</span>
+                                </div>
+                            </div>
+                            <div class="market_container ">
+                                <div class="market-status market-product"><i class='bx bx-package' ></i></div>
+                                <div class="market-info">
+                                    <h3>$25k x $32k</h3>
+                                    <span>Entrada x Saída</span>
+                                </div>
+                            </div>
+                            <div class="market_container ">
+                                <div class="market-status market-money"><i class='bx bx-dollar'></i></div>
+                                <div class="market-info">
+                                    <h3>$447.322</h3>
+                                    <span>Receita</span>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="grid-right_bottom sw">
+                        <div class="right-bottom_left">
+                            <h3>Entrada e Despesas</h3>
+                            <canvas id="myChart" height="250"></canvas>
+                        </div>
+                        <div class="right-bottom_right">
+                            <h3>Meta de Entrada</h3>
+                            <canvas id="myChart3" height="240"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/main.js"></script>
+    <script src="/js/theme.js"></script>
+    <script src="/js/charts.js"></script>
+
+ 
+</body>
+</html>
